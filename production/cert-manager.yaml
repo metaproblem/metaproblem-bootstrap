@@ -9,7 +9,7 @@ spec:
   project: production
   source:
     path: workloads/cert-manager
-    repoURL: git@github.com:soal-one/soal-one-bootstrap
+    repoURL: git@github.com:metaproblem/metaproblem-bootstrap
     targetRevision: HEAD
   destination:
     server: https://kubernetes.default.svc

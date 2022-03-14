@@ -1,23 +1,25 @@
-# Bootstrappable Cloud Computing Laboratory
+# Bootstrappable Cloud Computing Thunderdome
 
-First take a look at the k0s.yaml configuration and change it to your liking.
-Then:
-```bash
+## Setup
+You will need to install:
+    * `direnv`
+    * `k0sctl`
+    * `make`
+
+Look at `.envrc.example` and using it as a guide, fill out `.envrc` with the relevant values. Then:
+
 
 ```
-
-
-## Quick Start
-
-```
-k0s apply
-make add-cluster-config
+k0sctl apply
+k0sctl kubeconfig > ~/.kube/config # THIS OVERWRITES YOUR CONFIG
 make bootstrap
 make argo-password # Returns the admin argo password
-# Port forward argocd here
+
+# In a second terminal or backgrounded...
+kubectl port-forward service/argocd-server 8080:8080
+
 argocd login localhost:8080
-# Add your repository to argocd via Make target
-make argo-add-config-repo
+make argo-add-config-repo # Add your repository to argocd via Make target
 
 
 ```

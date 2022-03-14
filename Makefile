@@ -12,7 +12,7 @@ update-argo-password: ## Update argo admin password
 
 .PHONY: argo-add-config-repo
 argo-add-config-repo:
-	 argocd repo add git@github.com:soal-one/soal-one-bootstrap --ssh-private-key-path ~/.ssh/id_rsa_argocd_grindset
+	 argocd repo add git@github.com:metaproblem/metaproblem-bootstrap --ssh-private-key-path ~/.ssh/id_rsa_argocd_grindset
 
 .PHONY: add-cluster-config
 add-cluster-config: ## Get the cluster config from CLUSTER_HOST and splice it into our config

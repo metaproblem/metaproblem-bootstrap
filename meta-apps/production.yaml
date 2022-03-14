@@ -32,7 +32,7 @@ metadata:
 spec:
   project: production
   source:
-    repoURL: git@github.com:soal-one/soal-one-bootstrap
+    repoURL: git@github.com:metaproblem/metaproblem-bootstrap
     targetRevision: HEAD
     path: production
   destination:

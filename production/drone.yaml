@@ -9,7 +9,7 @@
 #   project: production
 #   source:
 #     path: workloads/drone
-#     repoURL: git@github.com:avaxrealms/pequod-grindset
+#     repoURL: git@github.com:metaproblem/metaproblem-bootstrap
 #     targetRevision: HEAD
 #   destination:
 #     server: https://kubernetes.default.svc

@@ -1,19 +1,19 @@
-# apiVersion: argoproj.io/v1alpha1
-# kind: Application
-# metadata:
-#   name: metallb
-#   namespace: argocd
-#   finalizers:
-#     - resources-finalizer.argocd.argoproj.io
-# spec:
-#   project: production
-#   source:
-#     path: workloads/metallb
-#     repoURL: git@github.com:soal-one/soal-one-bootstrap
-#     targetRevision: HEAD
-#   destination:
-#     server: https://kubernetes.default.svc
-#   syncPolicy:
-#     automated:
-#       selfHeal: true
-#       prune: true
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: metallb
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: production
+  source:
+    path: workloads/metallb
+    repoURL: git@github.com:metaproblem/metaproblem-bootstrap
+    targetRevision: HEAD
+  destination:
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
