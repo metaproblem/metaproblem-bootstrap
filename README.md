@@ -1,10 +1,13 @@
 # Bootstrappable Cloud Computing Thunderdome
+How we bootstrap our cloud. We use DigitalOcean for DNS. Other than that, this should be fairly generic.
 
 ## Setup
 You will need to install:
     * `direnv`
+    * `argocd` CLI
     * `k0sctl`
     * `make`
+    * `k8sec`
 
 Look at `.envrc.example` and using it as a guide, fill out `.envrc` with the relevant values. Then:
 
@@ -12,6 +15,7 @@ Look at `.envrc.example` and using it as a guide, fill out `.envrc` with the rel
 ```
 k0sctl apply
 k0sctl kubeconfig > ~/.kube/config # THIS OVERWRITES YOUR CONFIG
+
 make bootstrap
 make argo-password # Returns the admin argo password
 
@@ -20,8 +24,7 @@ kubectl port-forward service/argocd-server 8080:8080
 
 argocd login localhost:8080
 make argo-add-config-repo # Add your repository to argocd via Make target
-
-
+make add-do-token-secret # Add your DO_TOKEN to the env for external DNS
 ```
 
 ## Project Anatomy
@@ -41,17 +44,17 @@ make argo-add-config-repo # Add your repository to argocd via Make target
 
 
 ## TODO
-- Get nginx-ingress working with metallb - nginx daemonset and get it showing default backend
-- Argocd has some reference to a traefik crd that doesn't exist...
-- Add terraform folder & scripts for terraform (for building cluster)
-depending on use case
+- Rework cert-manager installation - shits borked
+- Add workload: Kubevela
+- Add workload: prometheus/grafana
+- Drone for CI? Or n8n?
+- Add secrets for pulling images from DO image repo
+- Add workload: n8n
 - Add workload: crossplane
 - Add workload: OAM
-- Add workload: cert-manager
 - Add workload: osiris
-- Add workload: argo workflows/events
 - Add workload: earthly/drone
-- Add workload: grafana/prometheus
+
 
 ## DONE
 - add .gitignore

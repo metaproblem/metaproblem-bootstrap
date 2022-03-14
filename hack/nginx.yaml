@@ -36,9 +36,9 @@ kind: Ingress
 metadata:
   name: nginx
   annotations:
+    cert-manager.io/cluster-issuer: acme-issuer
     kubernetes.io/ingress.class: "nginx"
-    ingress.kubernetes.io/ssl-redirect: "false"
-    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    ingress.kubernetes.io/ssl-redirect: "true"
     ingress.kubernetes.io/rewrite-target: /
     external-dns.alpha.kubernetes.io/hostname: nginx.softchewy.center
 spec:
