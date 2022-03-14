@@ -25,6 +25,11 @@ reset-nodes:
 .PHONY: configure-traefik
 configure-traefik: ## Copy traefik-config.yaml to CLUSTER_HOST - assumes root user
 	scp templates/traefik-config.yaml root@${CLUSTER_HOST}:/var/lib/rancher/k3s/server/manifests/traefik-config.yaml
+
+.PHONY: add-do-token-secret
+add-do-token-secret: ## Add the DigitalOcean token used by External dns
+add-do-token-secret: k8sec set -n default do-token=$$DO_TOKEN
+
 .PHONY: help
 help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
