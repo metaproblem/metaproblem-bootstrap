@@ -52,4 +52,4 @@ spec:
            name: nginx
            port:
              number: 80
-    host: fuck.itscoming.run
+    host: nginx.itscoming.run

@@ -25,6 +25,10 @@ kubectl port-forward service/argocd-server 8080:8080
 argocd login localhost:8080
 make argo-add-config-repo # Add your repository to argocd via Make target
 make add-do-token-secret # Add your DO_TOKEN to the env for external DNS
+
+# At this point you may want to test things - see `hack/nginx.yaml` for a quick test manifest
+
+make add-helm-repos
 ```
 
 ## Project Anatomy
@@ -44,16 +48,16 @@ make add-do-token-secret # Add your DO_TOKEN to the env for external DNS
 
 
 ## TODO
-- Rework cert-manager installation - shits borked
 - Add workload: Kubevela
+  - Add helm chart repository to argocd lol [DONE via make target]
+  - Create Proxy Chart for kubevela [PARTIALLY DONE - SEE KUBEVELA WORKLOAD]
 - Add workload: prometheus/grafana
-- Drone for CI? Or n8n?
+- Drone for CI? Or n8n? Earthly?
 - Add secrets for pulling images from DO image repo
 - Add workload: n8n
-- Add workload: crossplane
-- Add workload: OAM
+- Add workload: crossplane?
+- Whats that one universal controller thing? the write-your-controller-as-yaml thing?
 - Add workload: osiris
-- Add workload: earthly/drone
 
 
 ## DONE
