@@ -1,38 +1,23 @@
 kubevela:
-  # Default values for kubevela.
-  # This is a YAML-formatted file.
-  # Declare variables to be passed into your templates.
-
-  ## @section KubeVela core parameters
-
   ## @param systemDefinitionNamespace System definition namespace, if unspecified, will use built-in variable `.Release.Namespace`.
   systemDefinitionNamespace:
-
   ## @param applicationRevisionLimit Application revision limit
   applicationRevisionLimit: 10
-
   ## @param definitionRevisionLimit Definition revision limit
   definitionRevisionLimit: 20
-
   ## @param concurrentReconciles concurrentReconciles is the concurrent reconcile number of the controller
   concurrentReconciles: 4
-
   ## @param controllerArgs.reSyncPeriod The period for resync the applications
   controllerArgs:
-    reSyncPeriod: 5m
-
+    reSyncPeriod: 3m
   ## @param OAMSpecVer OAMSpecVer is the oam spec version controller want to setup
   OAMSpecVer: "v0.3"
-
   ## @param disableCaps Disable capability
   disableCaps: "rollout"
-
   ## @param enableFluxcdAddon Whether to enable fluxcd addon
   enableFluxcdAddon: false
-
   ## @param dependCheckWait dependCheckWait is the time to wait for ApplicationConfiguration's dependent-resource ready
   dependCheckWait: 30s
-
 
   ## @section KubeVela workflow parameters
 
@@ -46,7 +31,6 @@ kubevela:
         failedState: 300
     step:
       errorRetryTimes: 10
-
 
   ## @section KubeVela controller parameters
 
@@ -85,7 +69,6 @@ kubevela:
   healthCheck:
     port: 9440
 
-
   ## @section MultiCluster parameters
 
   ## @param multicluster.enabled Whether to enable multi-cluster
@@ -99,7 +82,7 @@ kubevela:
   ## @param multicluster.clusterGateway.secureTLS.enabled Whether to enable secure TLS
   ## @param multicluster.clusterGateway.secureTLS.certPath Path to the certificate file
   multicluster:
-    enabled: true
+    enabled: false
     clusterGateway:
       replicaCount: 1
       port: 9443
@@ -185,7 +168,7 @@ kubevela:
   logFilePath: ""
 
   ## @param logFileMaxSize Defines the maximum size a log file can grow to. Unit is megabytes. If the value is 0, the maximum file size is unlimited.
-  logFileMaxSize: 1024
+  logFileMaxSize: 512
 
   ## @skip admissionWebhooks
   admissionWebhooks:
