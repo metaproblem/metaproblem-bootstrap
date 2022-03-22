@@ -13,6 +13,7 @@ spec:
     targetRevision: HEAD
   destination:
     server: https://kubernetes.default.svc
+    namespace: vela-system
   syncPolicy:
     automated:
       selfHeal: true

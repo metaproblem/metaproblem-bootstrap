@@ -1,6 +1,6 @@
 kubevela:
   ## @param systemDefinitionNamespace System definition namespace, if unspecified, will use built-in variable `.Release.Namespace`.
-  systemDefinitionNamespace:
+  systemDefinitionNamespace: vela-system
   ## @param applicationRevisionLimit Application revision limit
   applicationRevisionLimit: 10
   ## @param definitionRevisionLimit Definition revision limit
