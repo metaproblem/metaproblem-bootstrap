@@ -1,4 +1,4 @@
-namespace: prometheus
+namespace: prometheus-operator
 
 resources:
 - bundle.yaml
