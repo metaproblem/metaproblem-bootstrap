@@ -48,8 +48,8 @@ make add-helm-repos
 
 
 ## TODO
+- fix cert manager - maybe move issuer into its own workload
 - Add velaux
-- Add workload: prometheus/grafana
 - Drone for CI? Or n8n? Earthly?
 - Add secrets for pulling images from DO image repo
 - Add workload: n8n
@@ -59,6 +59,8 @@ make add-helm-repos
 
 
 ## DONE
+- Add workload: prometheus
+- Add workload: prometheus operator
 - add imagepullsecrets
 - Add workload: Kubevela
   - Add helm chart repository to argocd lol
