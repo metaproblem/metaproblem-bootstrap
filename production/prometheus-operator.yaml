@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: prometheus-operator
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: production
+  source:
+    path: workloads/prometheus-operator
+    repoURL: git@github.com:metaproblem/metaproblem-bootstrap
+    targetRevision: HEAD
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: prometheus-operator
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+    syncOptions:
+    - CreateNamespace=true
