@@ -16315,6 +16315,9 @@ rules:
   - apiGroups: ["auditregistration.k8s.io"]
     resources: ["auditsinks"]
     verbs: ["get", "list", "watch", "update"]
+  - apiGroups: ["coordination.k8s.io"]
+    resources: ["leases"]
+    verbs: ["get"]
 ---
 # Source: cert-manager/templates/rbac.yaml
 # Issuer controller role
