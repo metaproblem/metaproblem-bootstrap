@@ -1,1 +1,2 @@
 export DO_TOKEN=<Digital Ocean API Token>
+CONTAINER_REGISTRY_CREDS=<base64-encoded .dockerconfigjson>

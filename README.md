@@ -48,9 +48,7 @@ make add-helm-repos
 
 
 ## TODO
-- Add workload: Kubevela
-  - Add helm chart repository to argocd lol [DONE via make target]
-  - Create Proxy Chart for kubevela [PARTIALLY DONE - SEE KUBEVELA WORKLOAD]
+- Add velaux
 - Add workload: prometheus/grafana
 - Drone for CI? Or n8n? Earthly?
 - Add secrets for pulling images from DO image repo
@@ -61,6 +59,10 @@ make add-helm-repos
 
 
 ## DONE
+- add imagepullsecrets
+- Add workload: Kubevela
+  - Add helm chart repository to argocd lol
+  - Create Proxy Chart for kubevela
 - add .gitignore
 - add bootstrap folder to install gitops operator (argocd) incl. projects
 - Add meta-apps folder to hold apps of apps - .e.g. production, etc
