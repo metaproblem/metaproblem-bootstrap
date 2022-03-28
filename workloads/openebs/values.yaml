@@ -661,4 +661,4 @@ openebs:
       # For example : quay.io/ is a correct value here and quay.io is incorrect
       registry:
       repository: bitnami/kubectl
-      tag:<
+      tag: ""
