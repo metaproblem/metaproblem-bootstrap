@@ -48,17 +48,19 @@ make add-helm-repos
 
 
 ## TODO
-- fix cert manager - maybe move issuer into its own workload
-- Add velaux
 - Drone for CI? Or n8n? Earthly?
 - Add secrets for pulling images from DO image repo
-- Add workload: n8n
 - Add workload: crossplane?
 - Whats that one universal controller thing? the write-your-controller-as-yaml thing?
 - Add workload: osiris
 
+# DOING
+- Add n8n
+- Get openebs working for CSI
 
 ## DONE
+- Add openebs
+- fix cert manager
 - Add workload: prometheus
 - Add workload: prometheus operator
 - add imagepullsecrets
@@ -68,3 +70,6 @@ make add-helm-repos
 - add .gitignore
 - add bootstrap folder to install gitops operator (argocd) incl. projects
 - Add meta-apps folder to hold apps of apps - .e.g. production, etc
+
+## Misc
+- Velaux doesnt seem to have any supported installation methods outside `vela addon enable` - ask about this in CNCF slack
