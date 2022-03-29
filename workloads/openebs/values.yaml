@@ -557,9 +557,9 @@ openebs:
     # | | - openebs-ndm(disable)
     # | - openebs-ndm(enable)
   localpv-provisioner:
-    enabled: false
+    enabled: true
     openebsNDM:
-      enabled: false
+      enabled: true
 
     # Sample configuration if you want to configure openebs locapv with custom values.
     # This is a small part of the full configuration. Full configuration available
@@ -615,7 +615,7 @@ openebs:
   # lvm local pv configuration goes here
   # ref - https://openebs.github.io/lvm-localpv
   lvm-localpv:
-    enabled: false
+    enabled: true
 
     # Sample configuration if you want to configure lvm localpv with custom values.
     # This is a small part of the full configuration. Full configuration available
@@ -636,7 +636,7 @@ openebs:
   # openebs nfs provisioner configuration goes here
   # ref - https://openebs.github.io/dynamic-nfs-provisioner
   nfs-provisioner:
-    enabled: false
+    enabled: true
 
     # Sample configuration if you want to configure lvm localpv with custom values.
     # This is a small part of the full configuration. Full configuration available
@@ -661,4 +661,4 @@ openebs:
       # For example : quay.io/ is a correct value here and quay.io is incorrect
       registry:
       repository: bitnami/kubectl
-      tag: ""
+      tag:
