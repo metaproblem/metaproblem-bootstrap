@@ -5,8 +5,6 @@ metadata:
 spec:
   accessModes:
   - readWriteOnce
-  requests:
-      storage: 5Gi
   claimRef:
     name: n8n-pv
     namespace: n8n
