@@ -4,7 +4,7 @@ metadata:
   name: n8n-pv
 spec:
   accessModes:
-  - readWriteOnce
+  - ReadWriteOnce
   claimRef:
     name: n8n-pv
     namespace: n8n
