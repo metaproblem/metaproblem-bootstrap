@@ -1,0 +1,6 @@
+namespace: n8n
+
+resources:
+- service.yaml
+- deployment.yaml
+- persistent-volume.yaml
