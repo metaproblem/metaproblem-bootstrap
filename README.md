@@ -48,7 +48,11 @@ make add-helm-repos
 
 
 ## TODO
-- Drone for CI? Or n8n? Earthly?
+- Add sloth
+- simple web service that lets you set the % of time it succeeds/fails
+- Deploy a web service with vela
+- Use sloth to monitor SLOs
+- Install rancher
 - Add secrets for pulling images from DO image repo
 - Add workload: crossplane?
 - Whats that one universal controller thing? the write-your-controller-as-yaml thing?
