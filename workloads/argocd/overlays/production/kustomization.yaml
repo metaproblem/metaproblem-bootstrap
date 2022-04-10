@@ -3,7 +3,10 @@ kind: Kustomization
 resources:
 - ../../base
 - ingress.yaml
+
 patchesStrategicMerge:
 - server.yaml
 - patches/run-as-root.yaml
+- patches/configmap-argocd-cm.yaml
+
 namespace: argocd

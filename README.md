@@ -48,7 +48,6 @@ make add-helm-repos
 
 
 ## TODO
-
 - Deploy a web service with vela
 - Use sloth to monitor SLOs
 - Install rancher
@@ -58,11 +57,13 @@ make add-helm-repos
 - Add workload: osiris
 
 # DOING
-- simple web service that lets you set the % of time it succeeds/fails
+
+- Add vela configuration to argocd configmap (see https://www.cncf.io/blog/2020/12/22/argocd-kubevela-gitops-with-developer-centric-experience/)
 - Add n8n
 - Get openebs working for CSI
 
 ## DONE
+- simple web service that lets you set the % of time it succeeds/fails
 - Add sloth
 - Add openebs
 - fix cert manager
