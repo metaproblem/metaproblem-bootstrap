@@ -1,0 +1,7 @@
+createTime: "0001-01-01T00:00:00Z"
+name: flake-service
+services:
+  flake-service:
+    image: registry.digitalocean.com/metaproblem/flake-service
+    type: webservice
+updateTime: "0001-01-01T00:00:00Z"

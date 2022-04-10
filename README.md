@@ -48,8 +48,7 @@ make add-helm-repos
 
 
 ## TODO
-- Add sloth
-- simple web service that lets you set the % of time it succeeds/fails
+
 - Deploy a web service with vela
 - Use sloth to monitor SLOs
 - Install rancher
@@ -59,10 +58,12 @@ make add-helm-repos
 - Add workload: osiris
 
 # DOING
+- simple web service that lets you set the % of time it succeeds/fails
 - Add n8n
 - Get openebs working for CSI
 
 ## DONE
+- Add sloth
 - Add openebs
 - fix cert manager
 - Add workload: prometheus

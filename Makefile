@@ -36,6 +36,8 @@ add-helm-repos:
 
 make-image-secret:
 	./script/create-image-pull-secret.sh
+	# TODO HACK - this is skeezy - we should have this specified on workloads
+	kubectl patch sa default -n $NAMESPACE -p '"imagePullSecrets": [{"name": "registry-credentials" }]'
 
 .PHONY: help
 help:
