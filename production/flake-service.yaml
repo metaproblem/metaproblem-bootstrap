@@ -9,6 +9,8 @@ spec:
   project: production
   source:
     path: workloads/flake-service
+    plugin:
+      name: vela
     repoURL: git@github.com:metaproblem/metaproblem-bootstrap
     targetRevision: HEAD
   destination:

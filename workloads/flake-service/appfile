@@ -1,0 +1,16 @@
+apiVersion: core.oam.dev/v1beta1
+kind: Application
+metadata:
+  name: website
+  namespace: default
+spec:
+  components:
+    - name: service
+      type: webservice
+      properties:
+        image: registry.digitalocean.com/metaproblem/flake-service
+        ports:
+          - port: 3000
+        env:
+          - name: SUCCESS_RATE
+            value: '"100"'
