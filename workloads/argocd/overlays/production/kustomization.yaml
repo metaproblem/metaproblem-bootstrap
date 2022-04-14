@@ -8,5 +8,6 @@ patchesStrategicMerge:
 - server.yaml
 - patches/run-as-root.yaml
 - patches/configmap-argocd-cm.yaml
+- patches/vela-on-repo-server.yaml
 
 namespace: argocd

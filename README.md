@@ -55,7 +55,7 @@ make add-helm-repos
 - Add workload: crossplane?
 - Whats that one universal controller thing? the write-your-controller-as-yaml thing?
 - Add workload: osiris
-
+- Automate generation of kubevela config for argocd, insert into bootstrap process at proper point
 # DOING
 
 - Add vela configuration to argocd configmap (see https://www.cncf.io/blog/2020/12/22/argocd-kubevela-gitops-with-developer-centric-experience/)
