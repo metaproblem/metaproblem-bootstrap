@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: grobid
+  labels:
+    app: grobid
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: grobid
+  template:
+    metadata:
+      labels:
+        app: grobid
+    spec:
+      containers:
+      - image: lfoppiano/grobid:0.7.1
+        name: grboid
+        ports:
+        - containerPort: 8070
+          name: http
