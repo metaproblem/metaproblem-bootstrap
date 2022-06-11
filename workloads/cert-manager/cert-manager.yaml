@@ -16959,6 +16959,9 @@ subjects:
   - kind: ServiceAccount
     name: cert-manager-cainjector
     namespace: cert-manager
+  - kind: ServiceAccount
+    name: cert-manager
+    namespace: cert-manager
 ---
 # Source: cert-manager/templates/rbac.yaml
 # grant cert-manager permission to manage the leaderelection configmap in the
