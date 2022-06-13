@@ -52,4 +52,4 @@ spec:
            name: nginx
            port:
              number: 80
-    host: nginx.itscoming.run
+    host: nginx.softchewy.center
