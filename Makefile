@@ -28,7 +28,7 @@ configure-traefik: ## Copy traefik-config.yaml to CLUSTER_HOST - assumes root us
 
 .PHONY: add-do-token-secret
 add-do-token-secret: ## Add the DigitalOcean token used by External dns
-	k8sec set do-token DO_TOKEN=$$DO_TOKEN -n default
+	k8sec set do-token token=$$DO_TOKEN -n default
 
 add-helm-repos:
 	argocd repo add https://charts.kubevela.net/core --type helm --name kubevela
