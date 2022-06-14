@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: typedb
+  namespace: typedb
+  labels:
+    app: typedb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: typedb
+  serviceName: "typedb"
+  template:
+    metadata:
+      labels:
+        app: typedb
+    spec:
+      containers:
+      - image: vaticle/typedb:2.11.0
+        name: typedb
+        ports:
+        - containerPort: 1729
+          name: http
+        volumeMounts:
+        - name: disk
+          mountPath: /typedb-all-linux/server/data
+  volumeClaimTemplates:
+  - metadata:
+      name: disk
+    spec:
+      accessModes: ["ReadWriteOnce"]
+      storageClassName: "openebs-hostpath"
+      resources:
+        requests:
+          storage: 25Gi
