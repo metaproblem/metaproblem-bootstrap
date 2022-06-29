@@ -48,7 +48,10 @@ make add-helm-repos
 
 
 ## TODO
-- Deploy a web service with vela
+- Add pomerium
+- Deploy kong ingress controller?
+- deploy sock shop
+- Deploy k6?
 - Use sloth to monitor SLOs
 - Install rancher
 - Add secrets for pulling images from DO image repo
