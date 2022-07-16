@@ -39,6 +39,29 @@ make-image-secret:
 	./script/create-image-pull-secret.sh
 	# TODO HACK - this is skeezy - we should have this specified on workloads
 	kubectl patch sa default -n $NAMESPACE -p '"imagePullSecrets": [{"name": "registry-credentials" }]'
+.PHONY: crossplane
+crossplane: install-crossplane configure-crossplane
+	echo Crossplane configured
+
+.PHONY: install-crossplane-cli
+install-crossplane-cli: ## Install the crossplane CLI
+	curl -sL https://raw.githubusercontent.com/crossplane/crossplane/master/install.sh | sh
+	sleep 3
+
+.PHONY: install-crossplane
+install-crossplane: ## Install crossplane into the cluster
+	kubectl create namespace crossplane-system
+
+	helm repo add crossplane-stable https://charts.crossplane.io/stable
+	helm repo update
+
+	helm install crossplane --namespace crossplane-system crossplane-stable/crossplane
+
+.PHONY: configure-crossplane
+configure-crossplane: ## Add providers and configuration to crossplane
+	-kubectl crossplane install provider crossplane/provider-kubernetes:main
+	#kubectl apply -f workloads/crossplane-config/
+	kubectl apply -f configuration/
 
 .PHONY: help
 help:
