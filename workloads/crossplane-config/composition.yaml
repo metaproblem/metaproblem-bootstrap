@@ -1,0 +1,28 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: Composition
+metadata:
+  name: app-composition
+  labels:
+    provider: kubernetes
+spec:
+  writeConnectionSecretsToNamespace: crossplane-system
+  compositeTypeRef:
+    apiVersion: platform.calendly.com/v1alpha1
+    kind: XApp
+  resources:
+  - name: namespace
+    base:
+      apiVersion: kubernetes.crossplane.io/v1alpha1
+      kind: Object
+      spec:
+        forProvider:
+          manifest:
+            apiVersion: v1
+            kind: Namespace
+            metadata:
+              name: testing-one-two
+        providerConfigRef:
+          name: kubernetes-provider
+    # patches:
+    # - fromFieldPath: "spec.parameters.name"
+    #   toFieldPath: "spec.forProvider.manifest.metadata.name"
