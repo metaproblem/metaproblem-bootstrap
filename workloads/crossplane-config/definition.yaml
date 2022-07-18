@@ -5,13 +5,13 @@ metadata:
 spec:
   group: platform.calendly.com
   names:
-    kind: XApp
-    plural: xapps
+    kind: XPayload
+    plural: xpayloads
   claimNames:
-    kind: App
-    plural: apps
+    kind: Payload
+    plural: payloads
   defaultCompositionRef:
-    name: app-composition
+    name: payload-composition
   versions:
   - name: v1alpha1
     served: true
