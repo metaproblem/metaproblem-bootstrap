@@ -26,8 +26,8 @@ spec:
         - containerPort: 5678
           name: http
         envFrom:
-        - secretRef:
-            name: n8n-creds
+        - configMapRef:
+            name: n8n-configmap
         volumeMounts:
         - mountPath: "/lol"
           name: n8n-volume
