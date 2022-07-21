@@ -1,6 +1,7 @@
 namespace: n8n
 
 resources:
+- configmap.yaml
 - service.yaml
 - deployment.yaml
 - persistent-volume-claim.yaml

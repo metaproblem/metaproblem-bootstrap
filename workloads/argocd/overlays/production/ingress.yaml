@@ -8,7 +8,7 @@ metadata:
     kubernetes.io/ingress.allow-http: "false"
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
     kubernetes.io/ingress.class: "nginx"
-    external-dns.alpha.kubernetes.io/hostname: argocd.softchewy.center
+    external-dns.alpha.kubernetes.io/hostname: "argocd.softchewy.center"
 spec:
   tls:
   - hosts:
