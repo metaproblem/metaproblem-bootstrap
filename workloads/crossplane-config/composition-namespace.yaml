@@ -1,0 +1,28 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: Composition
+metadata:
+  name: payload-composition-namespace
+  namespace: crossplane
+  labels:
+    provider: kubernetes
+spec:
+  writeConnectionSecretsToNamespace: crossplane
+  compositeTypeRef:
+    apiVersion: crossplane.metaproblem.io/v1alpha1
+    kind: XPayload
+  resources:
+  - name: namespace
+    base:
+      apiVersion: kubernetes.crossplane.io/v1alpha1
+      kind: Object
+      spec:
+        forProvider:
+          manifest:
+            apiVersion: v1
+            kind: Namespace
+            metadata: {}
+        providerConfigRef:
+          name: kubernetes
+    patches:
+    - fromFieldPath: "spec.parameters.name"
+      toFieldPath: "spec.forProvider.manifest.metadata.name"

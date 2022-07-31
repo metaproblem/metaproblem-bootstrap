@@ -48,6 +48,26 @@ make add-helm-repos
 
 
 ## TODO
+- Crossplane Demo pt 1
+  - Create a pod for the workload
+  - Create a Service for the workload
+  - Create an ingress for the workload
+  - Create TLS for the workload
+  - Create SLA queries using sloth
+  - Create a redis instance using DO crossplane provider
+  - Create a postgres instance using DO crossplane provider
+- Crossplane Demo pt 2
+  - Install config-controller
+  - Create a damn org
+  - Configure config-controller
+  - Create a redis instance for the workload
+  - Create a db for the workload
+- Crossplane Demo pt 3
+  - Does cuelang get us anything special? Can we test our setup better with cuelang? Can we just ues conftest or something similar plus kind/skaffold/tilt?
+- Add vault
+- Dagger? Is it shit? Can I leverage it to get quick CI with local loop?
+- If Dagger is shit, how about earthly?
+- If both are shit, i guess...build one?
 - Add pomerium
 - Deploy kong ingress controller?
 - deploy sock shop
@@ -62,10 +82,10 @@ make add-helm-repos
 # DOING
 
 - Add vela configuration to argocd configmap (see https://www.cncf.io/blog/2020/12/22/argocd-kubevela-gitops-with-developer-centric-experience/)
-- Add n8n
-- Get openebs working for CSI
 
 ## DONE
+- Add n8n
+- Get openebs working for CSI
 - simple web service that lets you set the % of time it succeeds/fails
 - Add sloth
 - Add openebs

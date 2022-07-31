@@ -1,0 +1,11 @@
+apiVersion: v2
+name: rancher
+description: Wrapper/Proxy Chart for rancher
+# A chart can be either an 'application' or a 'library' chart.
+type: application
+version: 0.1.0
+appVersion: "0.1.0"
+dependencies:
+- name: rancher
+  version: 2.6.6
+  repository: https://releases.rancher.com/server-charts/stable

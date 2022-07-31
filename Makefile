@@ -34,6 +34,7 @@ add-helm-repos:
 	argocd repo add https://charts.kubevela.net/core --type helm --name kubevela
 	argocd repo add https://openebs.github.io/charts --type helm --name openebs
 	argocd repo add https://charts.bitnami.com/bitnami --type helm --name bitnami
+	argocd repo add https://releases.rancher.com/server-charts/stable --type helm --name rancher
 
 make-image-secret:
 	./script/create-image-pull-secret.sh

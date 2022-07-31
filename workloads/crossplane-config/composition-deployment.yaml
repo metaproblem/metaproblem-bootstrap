@@ -1,7 +1,7 @@
 apiVersion: apiextensions.crossplane.io/v1
 kind: Composition
 metadata:
-  name: payload-composition
+  name: payload-composition-deployment
   namespace: crossplane
   labels:
     provider: kubernetes
@@ -19,10 +19,20 @@ spec:
         forProvider:
           manifest:
             apiVersion: v1
-            kind: Namespace
+            kind: Deployment
             metadata: {}
+            template:
+              metadata: {}
+              spec:
+                containers:
+                - image: ""
+                  name: ""
+                  ports:
+                  -
         providerConfigRef:
           name: kubernetes
     patches:
     - fromFieldPath: "spec.parameters.name"
       toFieldPath: "spec.forProvider.manifest.metadata.name"
+    - fromFieldPath: "spec.parameters.name"
+      toFieldPath: "spec.forProvider.manifest.template.spec.containers[*].image"
