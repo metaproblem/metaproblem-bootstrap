@@ -23,14 +23,14 @@ spec:
       keyPath: ~/.ssh/id_rsa
     role: worker
   k0s:
-    version: 1.22.3+k0s.0
+    version: 1.24.2+k0s.0
     config:
       spec:
         extensions:
           storage:
             type: openebs_local_storage
-      network:
-        podCIDR: 10.244.0.0/16
-        serviceCIDR: 10.96.0.0/12
-        provider: calico
-        calico: null
+        network:
+          podCIDR: 10.244.0.0/16
+          serviceCIDR: 10.96.0.0/12
+          provider: calico
+          calico: null
